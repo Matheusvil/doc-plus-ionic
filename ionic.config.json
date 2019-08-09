@@ -1,0 +1,7 @@
+{
+  "name": "DocPlus",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

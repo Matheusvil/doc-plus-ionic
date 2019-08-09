@@ -1,0 +1,30 @@
+.btn-center{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 30%;
+}
+#title{
+    text-align: center;
+    font-weight: bold;
+    font-family: arial;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    margin-top: 0;
+    color: rgb(35, 148, 172);
+    font-size: 60px;
+}
+
+.divider{
+    width: 80%;
+    margin: 5px auto;
+    border-top: 1px solid #3880ff;
+}
+
+hr{
+    border: #3880ff solid 2px;
+    width: 246px;
+    background-color: #3880ff;
+}
