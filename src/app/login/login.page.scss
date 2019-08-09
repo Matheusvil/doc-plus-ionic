@@ -1,0 +1,53 @@
+ion-title{
+    text-align: center;
+    font-weight: bold;
+    font-family: arial;
+    color: rgb(35, 148, 172);
+}
+#email{
+    margin-bottom: 15px;
+    margin-top: 15px;
+    font-family: Arial;
+    margin-left: 74px;
+    margin-right: 51px;
+}
+#senha{
+    font-family: Arial;
+    margin-left: 74px;
+    margin-right: 51px;
+}
+.email{
+    display: block;
+    margin-top: 135px;
+    font-weight: bold;
+    font-size: 25px;
+    color: rgb(35, 148, 172);
+}
+.senha{
+    font-weight: bold;
+    font-size: 25px;
+    color: rgb(35, 148, 172);
+    margin-top: 38px;
+    display: block;
+}
+.input-login{
+    font-size: 25px;
+    border: rgb(35, 148, 172) solid 3px;
+    font-family: arial;
+    font-weight: bold;
+}
+.input-senha{
+    font-size: 25px;
+    border: rgb(35, 148, 172) solid 3px;
+    font-family: arial;
+    font-weight: bold;
+}
+.btn-center{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 35px;;
+    margin-bottom: auto;
+    width: 30%;
+    height: 50px;
+}
