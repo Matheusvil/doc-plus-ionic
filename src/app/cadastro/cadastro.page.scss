@@ -1,0 +1,39 @@
+#formulario{
+    display: block;
+    width: 100%;
+}
+.cadastro{
+    text-align: center;
+    margin-bottom: 15px;
+    color: rgb(35, 148, 172);
+}
+.input-group{
+    display: block;
+    text-align: center;
+}
+.btn-cadastro{
+    display: block;
+    width: 36%;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#nome, #email-c, #senha-c, #data, #tel, #cpf, #rua, #cidade, #cep{
+    font-size: 19px;
+    border: none;
+    border-bottom: rgb(35, 148, 172) solid 2px;
+    margin-bottom: 15px;
+    font-family: arial;
+}
+.text{
+    font-family: arial;
+    font-size: 19px;
+    color: rgb(35, 148, 172);
+    display: block;
+}
+.select{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: arial;
+}
