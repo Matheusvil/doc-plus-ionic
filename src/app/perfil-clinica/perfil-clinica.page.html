@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-back-button ></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-avatar class="rounded-image">
+    <ion-img src="https://via.placeholder.com/200"></ion-img>
+  </ion-avatar>
+  <h1 text-center>Nome da clinica WOW</h1>
+  <p>
+    <ion-chip [outline]="true" color="primary">
+      <ion-label>Pediatra</ion-label>
+    </ion-chip>
+    <ion-chip [outline]="true" color="primary">
+      <ion-label>Psicologia</ion-label>
+    </ion-chip>
+    <ion-chip [outline]="true" color="primary">
+      <ion-label>Outros</ion-label>
+    </ion-chip>
+  </p>
+  <hr class="hr-color">
+  <h2><ion-icon name="list"></ion-icon> Sobre nós:</h2>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut impedit voluptatibus corporis quos fugit dolorem suscipit sed a culpa, consequuntur dolor, rem eaque unde enim totam velit? Tenetur, dolore! Tempora?
+  </p>
+  <hr class="hr-color">
+  <h2><ion-icon name="pin"></ion-icon> Mais informações</h2>
+  <ion-list>
+    <ion-item>
+      <ion-label text-wrap><b>Endereço:</b> Av. São João, 1701 - Jardim Apolo, São José dos Campos - SP, 12242-840</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label text-wrap><b>Horário: </b> <ion-text color="danger">Fechado</ion-text> ⋅ Abre seg às 08:00</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label text-wrap><b>Telefone:</b> (12) 98899-0703</ion-label>
+    </ion-item>
+  </ion-list>
+  <p>
+    <ion-button expand="block">Agendar horário</ion-button>
+  </p>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+        <ion-icon name="chatboxes"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
