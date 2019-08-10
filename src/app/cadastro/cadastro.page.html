@@ -1,8 +1,8 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-        <ion-back-button ></ion-back-button>
-      </ion-buttons>
+      <ion-back-button ></ion-back-button>
+    </ion-buttons>
     <!-- <ion-title>cadastro</ion-title> -->
   </ion-toolbar>
 </ion-header>
@@ -11,7 +11,7 @@
   <div class="titulo">
     <h1 class="cadastro">Cadastro</h1>
   </div>
-  <div class="input-group">
+  <div class="form">
     <ion-item>
       <ion-label position="floating">Nome Completo</ion-label>
       <ion-input type='text'></ion-input>
@@ -40,58 +40,66 @@
       <ion-label position="floating">Cidade</ion-label>
       <ion-input type='text'></ion-input>
     </ion-item>
-    <label class="text" for="estado">Estados</label>
-    <select name="estado" id="estado" class="select" required>
-      <option value="AC">AC</option>
-      <option value="AC">AL</option>
-      <option value="AC">AP</option>
-      <option value="AC">AM</option>
-      <option value="AC">BA</option>
-      <option value="AC">CE</option>
-      <option value="AC">DF</option>
-      <option value="AC">ES</option>
-      <option value="AC">GO</option>
-      <option value="AC">MA</option>
-      <option value="AC">MT</option>
-      <option value="AC">MS</option>
-      <option value="AC">MG</option>
-      <option value="AC">PA</option>
-      <option value="AC">PB</option>
-      <option value="AC">PR</option>
-      <option value="AC">PE</option>
-      <option value="AC">PI</option>
-      <option value="AC">RJ</option>
-      <option value="AC">RN</option>
-      <option value="AC">RS</option>
-      <option value="AC">RO</option>
-      <option value="AC">RR</option>
-      <option value="AC">SC</option>
-      <option value="AC">SP</option>
-      <option value="AC">SE</option>
-      <option value="AC">TO</option>
-    </select>
-    <label class="text" for="convenio">Convenio</label>
-    <select name="convenio" id="convenio" class="select" required>
-      <option value="Allianz">Allianz</option>
-      <option value="Amil">AMIL</option>
-      <option value="ativia">Ativia</option>
-      <option value="bradesco">Bradesco</option>
-      <option value="c.Aeronáutica">Comando da Aeronáutica</option>
-      <option value="economus">Economus</option>
-      <option value="eear">EEAR</option>
-      <option value="fusex">FUSEX</option>
-      <option value="Gama">Gama saúde</option>
-      <option value="g.sjc">Grupo São José Saúde</option>
-      <option value="l.Empresarial">Life Empresarial</option>
-      <option value="mediservice">Mediservice</option>
-      <option value="n.d.intermedica">Notre Dame Intermédica</option>
-      <option value="OMINT">OMINT</option>
-      <option value="policlin">Policlin Saúde</option>
-      <option value="pss">Porto Seguro Saúde</option>
-      <option value="Sabesprev">Sabesprev</option>
-      <option value="SulAmerica">SulAmérica Aetna</option>
-      <option value="Sompo">Sompo Seguros</option>
-    </select>
+    <ion-item>
+      <ion-label position="floating">Estado</ion-label>
+      <ion-select>
+        <ion-select-option value="AC">AC</ion-select-option>
+        <ion-select-option value="AL">AL</ion-select-option>
+        <ion-select-option value="AP">AP</ion-select-option>
+        <ion-select-option value="AM">AM</ion-select-option>
+        <ion-select-option value="BA">BA</ion-select-option>
+        <ion-select-option value="CE">CE</ion-select-option>
+        <ion-select-option value="DF">DF</ion-select-option>
+        <ion-select-option value="ES">ES</ion-select-option>
+        <ion-select-option value="GO">GO</ion-select-option>
+        <ion-select-option value="MA">MA</ion-select-option>
+        <ion-select-option value="MT">MT</ion-select-option>
+        <ion-select-option value="MS">MS</ion-select-option>
+        <ion-select-option value="MG">MG</ion-select-option>
+        <ion-select-option value="PA">PA</ion-select-option>
+        <ion-select-option value="PB">PB</ion-select-option>
+        <ion-select-option value="PR">PR</ion-select-option>
+        <ion-select-option value="PE">PE</ion-select-option>
+        <ion-select-option value="PI">PI</ion-select-option>
+        <ion-select-option value="RJ">RJ</ion-select-option>
+        <ion-select-option value="RN">RN</ion-select-option>
+        <ion-select-option value="RS">RS</ion-select-option>
+        <ion-select-option value="RO">RO</ion-select-option>
+        <ion-select-option value="RR">RR</ion-select-option>
+        <ion-select-option value="SC">SC</ion-select-option>
+        <ion-select-option value="SP">SP</ion-select-option>
+        <ion-select-option value="SE">SE</ion-select-option>
+        <ion-select-option value="TO">TO</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">CEP</ion-label>
+      <ion-input type='number'></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Convênio</ion-label>
+        <ion-select>
+            <ion-select-option value="Allianz">Allianz</ion-select-option>
+            <ion-select-option value="Amil">AMIL</ion-select-option>
+            <ion-select-option value="ativia">Ativia</ion-select-option>
+            <ion-select-option value="bradesco">Bradesco</ion-select-option>
+            <ion-select-option value="c.Aeronáutica">Comando da Aeronáutica</ion-select-option>
+            <ion-select-option value="economus">Economus</ion-select-option>
+            <ion-select-option value="eear">EEAR</ion-select-option>
+            <ion-select-option value="fusex">FUSEX</ion-select-option>
+            <ion-select-option value="Gama">Gama saúde</ion-select-option>
+            <ion-select-option value="g.sjc">Grupo São José Saúde</ion-select-option>
+            <ion-select-option value="l.Empresarial">Life Empresarial</ion-select-option>
+            <ion-select-option value="mediservice">Mediservice</ion-select-option>
+            <ion-select-option value="n.d.intermedica">Notre Dame Intermédica</ion-select-option>
+            <ion-select-option value="OMINT">OMINT</ion-select-option>
+            <ion-select-option value="policlin">Policlin Saúde</ion-select-option>
+            <ion-select-option value="pss">Porto Seguro Saúde</ion-select-option>
+            <ion-select-option value="Sabesprev">Sabesprev</ion-select-option>
+            <ion-select-option value="SulAmerica">SulAmérica Aetna</ion-select-option>
+            <ion-select-option value="Sompo">Sompo Seguros</ion-select-option>
+        </ion-select>
+      </ion-item>
   </div>
   <ion-button class="btn-cadastro">Cadastrar</ion-button>
 </ion-content>
