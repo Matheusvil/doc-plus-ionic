@@ -1,0 +1,77 @@
+#input-search{
+    position: absolute;
+    width: 90%;
+    padding: 15px;
+    left: 20px;
+    top: 20px;
+    border: 0;
+    background-color: #eee;
+    color: #626262;
+    outline: none;
+    box-shadow: 1px 1px 1px #777;
+    border-radius: 10px;
+  }
+  #search-icon{
+    position: absolute;
+    font-size: 30px;
+    color: #2A7EC0;
+    right: 25px;
+    top: 30px;
+  }
+  #busca-recente{
+    margin-top: 100px;
+    margin-left: 20px;
+    font-size: 20px;
+  }
+  #recente-icon{
+    margin-left: 10px;
+    margin-top: 15px;
+    color: #CFD7DF;
+  }
+  p{
+    position: absolute;
+    margin-top: -21px;
+    margin-left: 35px;
+    color: #CFD7DF;
+  }
+  #categorias{
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: 60px;
+  }
+  button{
+    position: absolute;
+    color: #2A7EC0;
+    width: 150px;
+    height: 70px;
+    border-radius: 25px;
+    opacity: 0.5;
+    font-size: 15px;
+    font-weight: bold;
+    outline: none;
+    box-shadow: 1px 1px 1px 1px #777;
+  }
+  #cardiologista{
+    top: 270px;
+    left: 20px;
+  }
+  #pediatra{
+    top: 270px;
+    right: 20px;
+  }
+  #psicologo{
+    top: 370px;
+    left: 20px;
+  }
+  #oftalmo{
+    top: 370px;
+    right: 20px;
+  }
+  #pneu{
+      top: 470px;
+      left: 20px;
+  }
+  #endo{
+    top: 470px;
+    right: 20px;
+  }

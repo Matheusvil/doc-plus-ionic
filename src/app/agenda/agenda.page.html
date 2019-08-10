@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>agenda</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <Form class="form">
+    <h1>Tipo de Agendamento:</h1>
+    <ion-list>
+        <ion-radio-group>
+          <ion-item>
+            <ion-label>Consulta</ion-label>
+            <ion-radio slot="start" value="biff" checked></ion-radio>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>Exame</ion-label>
+            <ion-radio slot="start" value="griff"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+      <ion-item id="categoria" class="input-select">
+          <ion-label>Categoria:</ion-label>
+          <ion-select value="" okText="Okay" cancelText="Dismiss">
+            <ion-select-option value="Cardiologista">Cardiologista</ion-select-option>
+            <ion-select-option value="Psicóloga">Psicóloga</ion-select-option>
+            <ion-select-option value="Pediatra">Pediatra</ion-select-option>
+            <ion-select-option value="Oftalmologista">Oftalmologista</ion-select-option>
+            <ion-select-option value="Pneumologista">Pneumologista</ion-select-option>
+            <ion-select-option value="Endócrinologista">Endócrinologista</ion-select-option>
+          </ion-select>
+      </ion-item>   
+      <ion-item id="date" class="input-select">
+        <ion-label>Data:</ion-label>
+        <ion-input type="date"></ion-input>
+      </ion-item>
+      <ion-item id="time" class="input-select">
+        <ion-label>Hora:</ion-label>
+        <ion-input type="time"></ion-input>
+      </ion-item>
+      <ion-button>Agendar</ion-button>
+  </Form>
+</ion-content>
