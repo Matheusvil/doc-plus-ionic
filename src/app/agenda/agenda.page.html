@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>agenda</ion-title>
+    <ion-title>Agenda</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -33,11 +33,11 @@
       </ion-item>   
       <ion-item id="date" class="input-select">
         <ion-label>Data:</ion-label>
-        <ion-input type="date"></ion-input>
+        <ion-datetime displayFormat="DD MM YY" placeholder="Select Date"></ion-datetime>
       </ion-item>
       <ion-item id="time" class="input-select">
         <ion-label>Hora:</ion-label>
-        <ion-input type="time"></ion-input>
+        <ion-datetime displayFormat="HH:mm"></ion-datetime>
       </ion-item>
       <ion-button>Agendar</ion-button>
   </Form>

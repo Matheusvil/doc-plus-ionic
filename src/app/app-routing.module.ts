@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'agenda', loadChildren: './agenda/agenda.module#AgendaPageModule' },
   { path: 'buscar', loadChildren: './buscar/buscar.module#BuscarPageModule' },
   { path: 'resultados', loadChildren: './resultados/resultados.module#ResultadosPageModule' },
+  { path: 'chat', loadChildren: './chat/chat.module#ChatPageModule' },
 ];
 
 @NgModule({

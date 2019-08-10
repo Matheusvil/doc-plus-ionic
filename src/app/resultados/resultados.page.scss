@@ -1,5 +1,5 @@
 ion-content {
-    --ion-background-color: #B4D2EC;
+    --ion-background-color: var(--ion-color-primary);
 }
 .cards{
     border-radius: 10px;
