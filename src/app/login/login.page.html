@@ -1,18 +1,29 @@
-<!--<ion-header>
-  <ion-toolbar>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button ></ion-back-button>
+    </ion-buttons>
     <ion-title>Login</ion-title>
   </ion-toolbar>
-</ion-header>-->
+</ion-header>
 
 <ion-content>
   <div class="titulo">
     <label for="titulo">Login</label>
   </div>
-  <div>
-    <label for="email" class="email">Email</label>
-    <input class="input-login" type="email">
-    <label for="senha" class="senha">Senha</label>
-    <input class="input-senha" type="password">
-    <ion-button class="btn-entrar" >Entrar</ion-button>
+  <div class="form">
+    <!-- <label for="email" class="email">Email</label>
+    <input class="input-login" type="email"> -->
+    <ion-item>
+      <ion-label position="floating">E-mail</ion-label>
+      <ion-input type='email'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input type='password'></ion-input>
+    </ion-item>
+    <!-- <label for="senha" class="senha">Senha</label>
+    <input class="input-senha" type="password"> -->
+    <ion-button class="btn-entrar" click="open">Entrar</ion-button>
   </div>
 </ion-content>

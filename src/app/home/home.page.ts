@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
+// import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
-import { LoginPage } from "../login/login.page";
-import { CadastroPage } from "../cadastro/cadastro.page";
 
 @Component({
   selector: 'app-home',
@@ -9,8 +8,12 @@ import { CadastroPage } from "../cadastro/cadastro.page";
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  login= LoginPage;
-  cadastro= CadastroPage;
-  constructor(navCtr:NavController) {
-  }   
+  constructor(private navCtrl: NavController) {
+  }
+  openLoginPage() {
+    this.navCtrl.navigateForward('/login');
+  }
+  openCadastroPage() {
+    this.navCtrl.navigateForward('/cadastro');
+  }
 }

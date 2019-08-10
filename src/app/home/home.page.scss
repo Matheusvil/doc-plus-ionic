@@ -20,11 +20,11 @@
 .divider{
     width: 80%;
     margin: 5px auto;
-    border-top: 1px solid #3880ff;
+    border-top: 1px solid var(--ion-color-primary);
 }
 
 hr{
-    border: #3880ff solid 2px;
+    border: var(--ion-color-primary) solid 2px;
     width: 246px;
-    background-color: #3880ff;
+    background-color: var(--ion-color-primary);
 }
