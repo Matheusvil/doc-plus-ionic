@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'calendario', loadChildren: './calendario/calendario.module#CalendarioPageModule' },
   { path: 'historico', loadChildren: './historico/historico.module#HistoricoPageModule' },
   { path: 'contatos', loadChildren: './contatos/contatos.module#ContatosPageModule' },
+  { path: 'perfil', loadChildren: './perfil/perfil.module#PerfilPageModule' },
 ];
 
 @NgModule({
