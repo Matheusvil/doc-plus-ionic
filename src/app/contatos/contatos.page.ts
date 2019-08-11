@@ -13,6 +13,6 @@ export class ContatosPage implements OnInit {
   ngOnInit() {
   }
   openChatPage() {
-    this.navCtrl.navigateForward('/');
+    this.navCtrl.navigateForward('/chat');
   }
 }

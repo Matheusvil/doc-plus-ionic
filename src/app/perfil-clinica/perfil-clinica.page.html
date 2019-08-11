@@ -39,10 +39,10 @@
     </ion-item>
   </ion-list>
   <p>
-    <ion-button expand="block">Agendar horário</ion-button>
+    <ion-button expand="block" (click)="openAgendaPage()">Agendar horário</ion-button>
   </p>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button>
+    <ion-fab-button (click)="openChatPage()">
         <ion-icon name="chatboxes"></ion-icon>
     </ion-fab-button>
   </ion-fab>
