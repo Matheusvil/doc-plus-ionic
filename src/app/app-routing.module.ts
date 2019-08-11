@@ -9,6 +9,9 @@ const routes: Routes = [
   { path: 'buscar', loadChildren: './buscar/buscar.module#BuscarPageModule' },
   { path: 'resultados', loadChildren: './resultados/resultados.module#ResultadosPageModule' },
   { path: 'chat', loadChildren: './chat/chat.module#ChatPageModule' },
+  { path: 'perfil-clinica/:id', loadChildren: './perfil-clinica/perfil-clinica.module#PerfilClinicaPageModule' },
+  { path: 'calendario', loadChildren: './calendario/calendario.module#CalendarioPageModule' },
+  { path: 'historico', loadChildren: './historico/historico.module#HistoricoPageModule' },
 ];
 
 @NgModule({
