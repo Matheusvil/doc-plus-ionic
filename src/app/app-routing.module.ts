@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'perfil-clinica/:id', loadChildren: './perfil-clinica/perfil-clinica.module#PerfilClinicaPageModule' },
   { path: 'calendario', loadChildren: './calendario/calendario.module#CalendarioPageModule' },
   { path: 'historico', loadChildren: './historico/historico.module#HistoricoPageModule' },
+  { path: 'contatos', loadChildren: './contatos/contatos.module#ContatosPageModule' },
 ];
 
 @NgModule({
