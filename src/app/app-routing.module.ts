@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'historico', loadChildren: './historico/historico.module#HistoricoPageModule' },
   { path: 'contatos', loadChildren: './contatos/contatos.module#ContatosPageModule' },
   { path: 'perfil', loadChildren: './perfil/perfil.module#PerfilPageModule' },
+  { path: 'result', loadChildren: './result/result.module#ResultPageModule' },
 ];
 
 @NgModule({
