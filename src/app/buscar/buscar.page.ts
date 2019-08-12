@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-buscar',
@@ -7,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuscarPage implements OnInit {
 
-  constructor() { }
-
+  constructor(private menu: MenuController) {
+  }
+  openFirst() {
+    this.menu.enable(true, 'first');
+    this.menu.open('first');
+  }
   ngOnInit() {
   }
 

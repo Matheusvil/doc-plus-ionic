@@ -1,3 +1,23 @@
 <ion-app>
+  <ion-menu side="start" menuId="first" contentId="menuContent">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Doc Plus</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content id="menuContent">
+      <!-- <ion-list-header text-center>Menu</ion-list-header> -->
+      <!-- <ion-list>
+        <ion-item button href="#">X</ion-item>
+      </ion-list> -->
+      <div *ngFor="let page of pages">
+        <!-- <ion-item href="#" (click)="page.onClick()">{{page.nome}}</ion-item> -->
+        <ion-button fill="clear" expand="full" (click)="page.onClick()">
+          {{page.nome}}
+        </ion-button>
+        <div class="divider"></div>
+      </div>
+    </ion-content>
+  </ion-menu>
   <ion-router-outlet></ion-router-outlet>
 </ion-app>
