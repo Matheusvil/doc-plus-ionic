@@ -1,20 +1,11 @@
 ion-content{
   --ion-background-color: var(--ion-color-primary);
 }
-#input-search{
-    position: absolute;
-    width: 90%;
-    padding: 15px;
-    left: 20px;
-    top: 20px;
-    border: 0;
-    background-color: #eee;
-    color: #626262;
-    outline: none;
-    box-shadow: 1px 1px 1px #777;
-    border-radius: 10px;
-    opacity: 0.85;
-  }
+ion-searchbar{
+  --background: #fff;
+  --cancel-button-color: var(--ion-color-primary);
+  --clear-button-color: var(--ion-color-primary);
+}
   #search-icon{
     position: absolute;
     font-size: 30px;
@@ -23,7 +14,7 @@ ion-content{
     top: 30px;
   }
   #busca-recente{
-    margin-top: 100px;
+    margin-top: 40px;
     margin-left: 20px;
     font-size: 20px;
     color: #fff;
@@ -53,7 +44,6 @@ ion-content{
     --color: var(--ion-color-primary);
     --background: #fff;
     --border-radius: 25px;
-    --opacity: .85;
   }
   #cardiologista{
     top: 270px;
