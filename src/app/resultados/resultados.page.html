@@ -1,11 +1,14 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Resultados</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button ></ion-back-button>
+    </ion-buttons>
+    <ion-title>Historico de Consultas</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content id="content">
-  <ion-card class="cards">
+  <ion-card class="cards" button (click)="openBuscarPage()">
     <ion-card-header>
         <ion-icon class="share" name="share"></ion-icon>
         <ion-icon class="add" name="add"></ion-icon>
@@ -17,7 +20,7 @@
       com validade de 1 ano.
     </ion-card-content>
   </ion-card>
-  <ion-card class="cards">
+  <ion-card class="cards" button (click)="openBuscarPage()">
     <ion-card-header>
         <ion-icon class="share" name="share"></ion-icon>
         <ion-icon class="add" name="add"></ion-icon>
@@ -29,7 +32,7 @@
       com validade de 1 ano.
     </ion-card-content>
   </ion-card>
-  <ion-card class="cards">
+  <ion-card class="cards" button (click)="openBuscarPage()">
     <ion-card-header>
         <ion-icon class="share" name="share"></ion-icon>
         <ion-icon class="add" name="add"></ion-icon>
@@ -41,7 +44,7 @@
       com validade de 1 ano.
     </ion-card-content>
   </ion-card>
-  <ion-card class="cards">
+  <ion-card class="cards" button (click)="openBuscarPage()">
     <ion-card-header>
         <ion-icon class="share" name="share"></ion-icon>
         <ion-icon class="add" name="add"></ion-icon>

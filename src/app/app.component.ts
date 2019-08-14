@@ -22,19 +22,19 @@ export class AppComponent {
     },
     {
       nome: 'Conversas',
-      onClick: () => {}
+      onClick: () => this.navCtrl.navigateForward('/contatos')
     },
     {
       nome: 'Histórico',
-      onClick: () => {}
+      onClick: () => this.navCtrl.navigateForward('/historico')
     },
     {
       nome: 'Resultados',
-      onClick: () => {}
+      onClick: () => this.navCtrl.navigateForward('/resultados')
     },
     {
       nome: 'Sair',
-      onClick: () => {}
+      onClick: () => this.navCtrl.navigateForward('/')
     }
   ];
   constructor(
