@@ -19,8 +19,7 @@ export class LoginPage{
       password: new FormControl('', Validators.compose([
         Validators.required,
         Validators.minLength(6),
-        Validators.maxLength(30),
-        Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$') 
+        Validators.maxLength(90) 
       ])),
       email: new FormControl('', Validators.compose([
         Validators.required,
