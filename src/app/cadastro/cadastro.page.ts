@@ -33,9 +33,14 @@ export class CadastroPage{
       ])),
       data: new FormControl('', Validators.compose([
         Validators.required,
+        Validators.minLength(10),
+        Validators.maxLength(10)
       ])),
       cpf: new FormControl('', Validators.compose([
         Validators.required,
+        Validators.minLength(11),
+        Validators.maxLength(11),
+        Validators.pattern(/^-?(0|[1-9]\d*)?$/)
       ])),
       endereco: new FormControl('', Validators.compose([
         Validators.required,
@@ -51,6 +56,9 @@ export class CadastroPage{
       ])),
       cep: new FormControl('', Validators.compose([
         Validators.required,
+        Validators.minLength(8),
+        Validators.maxLength(8),
+        Validators.pattern(/^-?(0|[1-9]\d*)?$/)
       ])),
     })
   }
