@@ -11,38 +11,39 @@
   <div class="titulo">
     <h1 class="cadastro">Cadastro</h1>
   </div>
-  <div class="form">
+  <!-- <div class="form"> -->
+  <form [formGroup]="cadastroForm">
     <ion-item>
       <ion-label position="floating">Nome Completo</ion-label>
-      <ion-input type='text'></ion-input>
+      <ion-input formControlName="nome" type='text'></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Data Nacimento</ion-label>
-      <ion-input type='date'></ion-input>
+      <ion-input formControlName="data" type='date'></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">E-mail</ion-label>
-      <ion-input type='email'></ion-input>
+      <ion-input formControlName="email" type='email'></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Senha</ion-label>
-      <ion-input type='password'></ion-input>
+      <ion-input formControlName="password" type='password'></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">CPF</ion-label>
-      <ion-input type='number'></ion-input>
+      <ion-input formControlName="cpf" type='number'></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Endereço</ion-label>
-      <ion-input type='text'></ion-input>
+      <ion-input formControlName="endereco" type='text'></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Cidade</ion-label>
-      <ion-input type='text'></ion-input>
+      <ion-input formControlName="cidade" type='text'></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Estado</ion-label>
-      <ion-select>
+      <ion-select formControlName="estado">
         <ion-select-option value="AC">AC</ion-select-option>
         <ion-select-option value="AL">AL</ion-select-option>
         <ion-select-option value="AP">AP</ion-select-option>
@@ -74,32 +75,33 @@
     </ion-item>
     <ion-item>
       <ion-label position="floating">CEP</ion-label>
-      <ion-input type='number'></ion-input>
+      <ion-input formControlName="cep" type='number'></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label position="floating">Convênio</ion-label>
-        <ion-select>
-            <ion-select-option value="Allianz">Allianz</ion-select-option>
-            <ion-select-option value="Amil">AMIL</ion-select-option>
-            <ion-select-option value="ativia">Ativia</ion-select-option>
-            <ion-select-option value="bradesco">Bradesco</ion-select-option>
-            <ion-select-option value="c.Aeronáutica">Comando da Aeronáutica</ion-select-option>
-            <ion-select-option value="economus">Economus</ion-select-option>
-            <ion-select-option value="eear">EEAR</ion-select-option>
-            <ion-select-option value="fusex">FUSEX</ion-select-option>
-            <ion-select-option value="Gama">Gama saúde</ion-select-option>
-            <ion-select-option value="g.sjc">Grupo São José Saúde</ion-select-option>
-            <ion-select-option value="l.Empresarial">Life Empresarial</ion-select-option>
-            <ion-select-option value="mediservice">Mediservice</ion-select-option>
-            <ion-select-option value="n.d.intermedica">Notre Dame Intermédica</ion-select-option>
-            <ion-select-option value="OMINT">OMINT</ion-select-option>
-            <ion-select-option value="policlin">Policlin Saúde</ion-select-option>
-            <ion-select-option value="pss">Porto Seguro Saúde</ion-select-option>
-            <ion-select-option value="Sabesprev">Sabesprev</ion-select-option>
-            <ion-select-option value="SulAmerica">SulAmérica Aetna</ion-select-option>
-            <ion-select-option value="Sompo">Sompo Seguros</ion-select-option>
-        </ion-select>
-      </ion-item>
-  </div>
+      <ion-label position="floating">Convênio</ion-label>
+      <ion-select formControlName="convenio">
+          <ion-select-option value="Allianz">Allianz</ion-select-option>
+          <ion-select-option value="Amil">AMIL</ion-select-option>
+          <ion-select-option value="ativia">Ativia</ion-select-option>
+          <ion-select-option value="bradesco">Bradesco</ion-select-option>
+          <ion-select-option value="c.Aeronáutica">Comando da Aeronáutica</ion-select-option>
+          <ion-select-option value="economus">Economus</ion-select-option>
+          <ion-select-option value="eear">EEAR</ion-select-option>
+          <ion-select-option value="fusex">FUSEX</ion-select-option>
+          <ion-select-option value="Gama">Gama saúde</ion-select-option>
+          <ion-select-option value="g.sjc">Grupo São José Saúde</ion-select-option>
+          <ion-select-option value="l.Empresarial">Life Empresarial</ion-select-option>
+          <ion-select-option value="mediservice">Mediservice</ion-select-option>
+          <ion-select-option value="n.d.intermedica">Notre Dame Intermédica</ion-select-option>
+          <ion-select-option value="OMINT">OMINT</ion-select-option>
+          <ion-select-option value="policlin">Policlin Saúde</ion-select-option>
+          <ion-select-option value="pss">Porto Seguro Saúde</ion-select-option>
+          <ion-select-option value="Sabesprev">Sabesprev</ion-select-option>
+          <ion-select-option value="SulAmerica">SulAmérica Aetna</ion-select-option>
+          <ion-select-option value="Sompo">Sompo Seguros</ion-select-option>
+      </ion-select>
+    </ion-item>
+  <!-- </div> -->
+  </form>
   <ion-button class="btn-cadastro" (click)="openBuscarPage()">Cadastrar</ion-button>
 </ion-content>
