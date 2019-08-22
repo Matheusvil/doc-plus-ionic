@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { FormGroup, FormBuilder, FormControl, Validators } from "@angular/forms"
 
 @Component({
   selector: 'app-cadastro',
@@ -7,7 +8,51 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./cadastro.page.scss'],
 })
 export class CadastroPage{
-  constructor(private navCtrl: NavController) {
+
+  cadastroForm: FormGroup;
+
+  constructor(
+    private navCtrl: NavController,
+    public formBuilder: FormBuilder
+  ) {
+    this.cadastroForm = this.formBuilder.group({
+      password: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.minLength(6),
+        Validators.maxLength(30) 
+      ])),
+      email: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.minLength(6),
+        Validators.maxLength(90)
+      ])),
+      nome: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.minLength(6),
+        Validators.maxLength(90)
+      ])),
+      data: new FormControl('', Validators.compose([
+        Validators.required,
+      ])),
+      cpf: new FormControl('', Validators.compose([
+        Validators.required,
+      ])),
+      endereco: new FormControl('', Validators.compose([
+        Validators.required,
+      ])),
+      cidade: new FormControl('', Validators.compose([
+        Validators.required,
+      ])),
+      estado: new FormControl('', Validators.compose([
+        Validators.required,
+      ])),
+      convenio: new FormControl('', Validators.compose([
+        Validators.required,
+      ])),
+      cep: new FormControl('', Validators.compose([
+        Validators.required,
+      ])),
+    })
   }
   openBuscarPage() {
     this.navCtrl.navigateForward('/buscar');
