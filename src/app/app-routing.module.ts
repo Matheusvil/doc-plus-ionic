@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'contatos', loadChildren: './contatos/contatos.module#ContatosPageModule' },
   { path: 'perfil', loadChildren: './perfil/perfil.module#PerfilPageModule' },
   { path: 'result', loadChildren: './result/result.module#ResultPageModule' },
+  { path: 'lista-categorias', loadChildren: './lista-categorias/lista-categorias.module#ListaCategoriasPageModule' },
 ];
 
 @NgModule({

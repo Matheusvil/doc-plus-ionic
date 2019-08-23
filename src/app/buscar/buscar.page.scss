@@ -3,6 +3,27 @@ ion-searchbar{
   --cancel-button-color: var(--ion-color-primary);
   --clear-button-color: var(--ion-color-primary);
 }
-#map{
-  height: 90%;
+h2{
+  color: #151515;
+  padding: 10px;
+  font-size: 22px;
+}
+p{
+  color: #CDCDCD;
+  margin-left: 20px;
+  padding: 5px;
+}
+a{
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 20px;
+}
+ion-row{
+  padding: 10px;
+}
+ion-button{
+  width: 140px;
+  height: 65px;
+  font-size: 12px;
+  --border-radius:15px;
 }
