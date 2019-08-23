@@ -23,7 +23,7 @@ export class CadastroPage{
       ])),
       email: new FormControl('', Validators.compose([
         Validators.required,
-        Validators.minLength(6),
+        Validators.minLength(11),
         Validators.maxLength(90)
       ])),
       nome: new FormControl('', Validators.compose([
