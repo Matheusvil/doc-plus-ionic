@@ -60,6 +60,9 @@ export class CadastroPage{
         Validators.maxLength(8),
         Validators.pattern(/^-?(0|[1-9]\d*)?$/)
       ])),
+      numero: new FormControl('', Validators.compose([
+        Validators.required,
+      ]))
     })
   }
   openBuscarPage() {
