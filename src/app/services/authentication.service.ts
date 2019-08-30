@@ -11,7 +11,7 @@ export class AuthenticationService {
   constructor(private http: HttpClient) { }
   authorize(email, password){
     return new Promise((resolve, reject)=>{
-      this.http.post(environment.api+'api/oauth/authorize',{
+      this.http.post(environment.api+'api/user/oauth',{
         email, password
       }).subscribe((response)=>{
         resolve(response)

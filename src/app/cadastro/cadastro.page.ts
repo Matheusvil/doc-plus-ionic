@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { FormGroup, FormBuilder, FormControl, Validators } from "@angular/forms"
+import { UtilsService } from '../services/utils.service'
 
 @Component({
   selector: 'app-cadastro',
@@ -10,11 +11,13 @@ import { FormGroup, FormBuilder, FormControl, Validators } from "@angular/forms"
 export class CadastroPage{
 
   cadastroForm: FormGroup;
-
+  uf: Array<any>;
   constructor(
     private navCtrl: NavController,
-    public formBuilder: FormBuilder
+    public formBuilder: FormBuilder,
+    private utils: UtilsService 
   ) {
+    this.loadUf()
     this.cadastroForm = this.formBuilder.group({
       password: new FormControl('', Validators.compose([
         Validators.required,
@@ -36,13 +39,10 @@ export class CadastroPage{
         Validators.minLength(10),
         Validators.maxLength(10)
       ])),
-      cpf: new FormControl('', Validators.compose([
+      rua: new FormControl('', Validators.compose([
         Validators.required,
-        Validators.minLength(11),
-        Validators.maxLength(11),
-        Validators.pattern(/^-?(0|[1-9]\d*)?$/)
       ])),
-      endereco: new FormControl('', Validators.compose([
+      bairro: new FormControl('', Validators.compose([
         Validators.required,
       ])),
       cidade: new FormControl('', Validators.compose([
@@ -69,4 +69,9 @@ export class CadastroPage{
     this.navCtrl.navigateForward('/buscar');
   }
 
+  async loadUf(){
+    const states:Array<any> = await this.utils.getStates()
+    this.uf = states
+    console.log(this.uf)
+  }
 }
