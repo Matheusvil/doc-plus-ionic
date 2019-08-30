@@ -25,4 +25,16 @@ export class UtilsService {
       )
     }) 
   }
+  async getCep(cep):Promise<Object>{
+    return new Promise((resolve)=>{
+      this.http.get(`https://viacep.com.br/ws/${cep}/json/`).subscribe(
+        (response:Object)=>{
+          resolve(response)
+        },
+        (error)=>{
+          resolve({})
+        }
+      )
+    })
+  }
 }

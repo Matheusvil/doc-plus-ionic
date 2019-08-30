@@ -30,7 +30,7 @@
     </ion-item>
     <ion-item>
       <ion-label position="floating">CEP</ion-label>
-      <ion-input formControlName="cep" type='text'></ion-input>
+      <ion-input formControlName="cep" type='text' (keyup)="cepKeyUp($event)"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Rua</ion-label>

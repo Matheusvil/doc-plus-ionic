@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { FormGroup, FormBuilder, FormControl, Validators } from "@angular/forms"
 import { UtilsService } from '../services/utils.service'
+import { resolve } from 'q';
 
 @Component({
   selector: 'app-cadastro',
@@ -73,5 +74,18 @@ export class CadastroPage{
     const states:Array<any> = await this.utils.getStates()
     this.uf = states
     console.log(this.uf)
+  }
+  cepKeyUp(val){
+    console.log(this.cadastroForm.value.cep)
+    if(this.cadastroForm.value.cep.length == 8){
+      this.loadCEP(this.cadastroForm.value.cep)
+    }
+  }
+  async loadCEP(cep){
+    const cepC:Object = await this.utils.getCep(cep)
+    console.log(cepC)
+  }
+  inputDados(dados){
+   this.cadastroForm.controls['rua'].setValue(resolve)      
   }
 }
