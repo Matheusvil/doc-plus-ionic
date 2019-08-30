@@ -86,6 +86,9 @@ export class CadastroPage{
     console.log(cepC)
   }
   inputDados(dados){
-   this.cadastroForm.controls['rua'].setValue(resolve)      
+    this.cadastroForm.controls['rua'].setValue(dados.logradouro);
+    this.cadastroForm.controls['bairro'].setValue(dados.bairro);
+    this.cadastroForm.controls['cidade'].setValue(dados.localidade);
+    this.cadastroForm.controls['estado'].setValue(dados.uf);
   }
 }
