@@ -86,6 +86,7 @@ export class CadastroPage{
     console.log(cepC)
   }
   inputDados(dados){
+    this.loadCEP(dados)
     this.cadastroForm.controls['rua'].setValue(dados.logradouro);
     this.cadastroForm.controls['bairro'].setValue(dados.bairro);
     this.cadastroForm.controls['cidade'].setValue(dados.localidade);
