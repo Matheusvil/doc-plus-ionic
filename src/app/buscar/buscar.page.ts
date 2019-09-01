@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 
+
+
 @Component({
   selector: 'app-buscar',
   templateUrl: './buscar.page.html',
@@ -16,5 +18,5 @@ export class BuscarPage implements OnInit {
   }
   ngOnInit() {
   }
-
 }
+ 

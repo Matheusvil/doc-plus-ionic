@@ -11,15 +11,17 @@
   <div class="titulo">
     <label for="titulo">Login</label>
   </div>
-  <div class="form">
+  <!-- <div class="form"> -->
+  <form [formGroup]="loginForm">
     <ion-item>
       <ion-label position="floating">E-mail</ion-label>
-      <ion-input type='email'></ion-input>
+      <ion-input formControlName="email" type='email'></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Senha</ion-label>
-      <ion-input type='password'></ion-input>
+      <ion-input formControlName="password" type='password'></ion-input>
     </ion-item>
-    <ion-button class="btn-entrar" (click)="openBuscarPage()">Entrar</ion-button>
-  </div>
+    <ion-button [disabled]="!loginForm.valid" class="btn-entrar" (click)="loginAuth()">Entrar</ion-button>
+  </form>
+  <!-- </div> -->
 </ion-content>
