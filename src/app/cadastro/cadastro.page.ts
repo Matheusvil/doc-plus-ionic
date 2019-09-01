@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { FormGroup, FormBuilder, FormControl, Validators } from "@angular/forms"
 import { UtilsService } from '../services/utils.service'
-import { resolve } from 'q';
 
 @Component({
   selector: 'app-cadastro',
@@ -84,9 +83,9 @@ export class CadastroPage{
   async loadCEP(cep){
     const cepC:Object = await this.utils.getCep(cep)
     console.log(cepC)
+    this.inputDados(cepC)
   }
   inputDados(dados){
-    this.loadCEP(dados)
     this.cadastroForm.controls['rua'].setValue(dados.logradouro);
     this.cadastroForm.controls['bairro'].setValue(dados.bairro);
     this.cadastroForm.controls['cidade'].setValue(dados.localidade);
