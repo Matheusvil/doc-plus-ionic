@@ -30,7 +30,7 @@
     </ion-item>
     <ion-item>
       <ion-label position="floating">CEP</ion-label>
-      <ion-input formControlName="cep" type='text' (keyup)="cepKeyUp($event)" (ionBlur)="inputDados()"></ion-input>
+      <ion-input formControlName="cep" type='text' (keyup)="cepKeyUp($event)"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Rua</ion-label>
@@ -79,5 +79,5 @@
       </ion-select>
     </ion-item> -->
   </form>
-  <ion-button class="btn-cadastro" (click)="openBuscarPage()">Cadastrar</ion-button>
+  <ion-button class="btn-cadastro" (click)="createUser()">Cadastrar</ion-button>
 </ion-content>

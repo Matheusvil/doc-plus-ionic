@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { FormGroup, FormBuilder, FormControl, Validators } from "@angular/forms"
 import { UtilsService } from '../services/utils.service'
-
+import { UsersService, User } from '../services/users.service'
+ 
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.page.html',
@@ -15,7 +16,8 @@ export class CadastroPage{
   constructor(
     private navCtrl: NavController,
     public formBuilder: FormBuilder,
-    private utils: UtilsService 
+    private utils: UtilsService,
+    private users: UsersService
   ) {
     this.loadUf()
     this.cadastroForm = this.formBuilder.group({
@@ -81,14 +83,40 @@ export class CadastroPage{
     }
   }
   async loadCEP(cep){
-    const cepC:Object = await this.utils.getCep(cep)
-    console.log(cepC)
-    this.inputDados(cepC)
+    const cepC:Object = await this.utils.getCep(cep);
+    console.log(cepC);
+    this.inputDados(cepC);
   }
   inputDados(dados){
     this.cadastroForm.controls['rua'].setValue(dados.logradouro);
     this.cadastroForm.controls['bairro'].setValue(dados.bairro);
     this.cadastroForm.controls['cidade'].setValue(dados.localidade);
     this.cadastroForm.controls['estado'].setValue(dados.uf);
+  }
+  async createUser(){
+    try{
+      const value: User= this.parseUser(this.cadastroForm.value)
+      let user = await this.users.createUser(value);
+      console.log(user);
+    }catch(err){
+        console.log(err)
+    }
+  }
+  parseUser(value:any):User{
+    return{
+      name: value.nome,
+      birthDay: value.data,
+      email: value.email,
+      password: value.password,
+      address:{
+        city: value.cidade,
+        complement: value.complenento || "",
+        neighborhood: value.bairro,
+        number: value.numero,
+        state: value.estado,
+        street: value.rua,
+        zip: value.cep
+      }
+    }
   }
 }
