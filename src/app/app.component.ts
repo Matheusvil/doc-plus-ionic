@@ -5,7 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { UsersService } from './services/users.service';
 import { Router } from '@angular/router';
-import { AuthenticationService  } from './services/Authentication.service';
+import { AuthenticationService  } from './services/authentication.service';
 
 interface Page {
   nome: string;

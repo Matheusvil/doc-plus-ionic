@@ -78,12 +78,15 @@ export class CadastroPage {
       this.uf = states;
   }
   cepKeyUp(val) {
+    console.log(this.cadastroForm.value.cep, this.cadastroForm.value.cep.length);
     if (this.cadastroForm.value.cep.length === 8) {
         this.loadCEP(this.cadastroForm.value.cep);
     }
   }
   async loadCEP(cep) {
+    console.log('PESQUISANDO CEP', cep);
     const cepC: {} = await this.utils.getCep(cep);
+    console.log('ACHOU', cepC);
     this.inputDados(cepC);
   }
   inputDados(dados) {
