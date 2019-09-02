@@ -3,6 +3,9 @@ import { Component } from '@angular/core';
 import { Platform, MenuController, NavController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { UsersService } from './services/users.service';
+import { Router } from '@angular/router';
+import { AuthenticationService  } from './services/Authentication.service';
 
 interface Page {
   nome: string;
@@ -34,19 +37,26 @@ export class AppComponent {
     },
     {
       nome: 'Sair',
-      onClick: () => this.navCtrl.navigateForward('/')
+      onClick: () => this.logout()
     }
   ];
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    private userService: UsersService,
+    private router: Router,
+    private authentication: AuthenticationService
   ) {
     this.initializeApp();
   }
   initializeApp() {
-    this.platform.ready().then(() => {
+    this.platform.ready().then(async () => {
+      const token = await this.userService.getToken();
+      if (token) {
+        this.router.navigateByUrl('buscar');
+      }
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
@@ -54,5 +64,10 @@ export class AppComponent {
 
   openPage(page: Page): void {
     return;
+  }
+
+  logout() {
+    this.authentication.logout();
+    this.navCtrl.navigateForward('/');
   }
 }

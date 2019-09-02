@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { FormGroup, FormBuilder, FormControl, Validators } from "@angular/forms"
-import { UtilsService } from '../services/utils.service'
-import { UsersService, User } from '../services/users.service'
- 
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { UtilsService } from '../services/utils.service';
+import { UsersService, User } from '../services/users.service';
+import { AlertController } from '@ionic/angular';
+
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.page.html',
   styleUrls: ['./cadastro.page.scss'],
 })
-export class CadastroPage{
+export class CadastroPage {
 
   cadastroForm: FormGroup;
   uf: Array<any>;
@@ -17,14 +18,15 @@ export class CadastroPage{
     private navCtrl: NavController,
     public formBuilder: FormBuilder,
     private utils: UtilsService,
-    private users: UsersService
+    private userService: UsersService,
+    private alertCtrl: AlertController
   ) {
-    this.loadUf()
+    this.loadUf();
     this.cadastroForm = this.formBuilder.group({
       password: new FormControl('', Validators.compose([
         Validators.required,
         Validators.minLength(6),
-        Validators.maxLength(30) 
+        Validators.maxLength(30)
       ])),
       email: new FormControl('', Validators.compose([
         Validators.required,
@@ -65,58 +67,60 @@ export class CadastroPage{
       numero: new FormControl('', Validators.compose([
         Validators.required,
       ]))
-    })
+    });
   }
   openBuscarPage() {
     this.navCtrl.navigateForward('/buscar');
   }
 
-  async loadUf(){
-    const states:Array<any> = await this.utils.getStates()
-    this.uf = states
-    console.log(this.uf)
+  async loadUf() {
+      const states: Array<any> = await this.utils.getStates();
+      this.uf = states;
   }
-  cepKeyUp(val){
-    console.log(this.cadastroForm.value.cep)
-    if(this.cadastroForm.value.cep.length == 8){
-      this.loadCEP(this.cadastroForm.value.cep)
+  cepKeyUp(val) {
+    if (this.cadastroForm.value.cep.length === 8) {
+        this.loadCEP(this.cadastroForm.value.cep);
     }
   }
-  async loadCEP(cep){
-    const cepC:Object = await this.utils.getCep(cep);
-    console.log(cepC);
+  async loadCEP(cep) {
+    const cepC: {} = await this.utils.getCep(cep);
     this.inputDados(cepC);
   }
-  inputDados(dados){
-    this.cadastroForm.controls['rua'].setValue(dados.logradouro);
-    this.cadastroForm.controls['bairro'].setValue(dados.bairro);
-    this.cadastroForm.controls['cidade'].setValue(dados.localidade);
-    this.cadastroForm.controls['estado'].setValue(dados.uf);
+  inputDados(dados) {
+    this.cadastroForm.controls.rua.setValue(dados.logradouro);
+    this.cadastroForm.controls.bairro.setValue(dados.bairro);
+    this.cadastroForm.controls.cidade.setValue(dados.localidade);
+    this.cadastroForm.controls.estado.setValue(dados.uf);
   }
-  async createUser(){
-    try{
-      const value: User= this.parseUser(this.cadastroForm.value)
-      let user = await this.users.createUser(value);
-      console.log(user);
-    }catch(err){
-        console.log(err)
+  async createUser() {
+    try {
+      const value: User = this.parseUser(this.cadastroForm.value);
+      const user: any = await this.userService.createUser(value);
+      this.openBuscarPage();
+    } catch (err) {
+        const alt = await this.alertCtrl.create({
+            header: 'Error',
+            message: err.error.message,
+            buttons: ['OK']
+        });
+        await alt.present();
     }
   }
-  parseUser(value:any):User{
+  parseUser(value: any): User {
     return{
       name: value.nome,
       birthDay: value.data,
       email: value.email,
       password: value.password,
-      address:{
+      address: {
         city: value.cidade,
-        complement: value.complenento || "",
+        complement: value.complenento || '',
         neighborhood: value.bairro,
         number: value.numero,
         state: value.estado,
         street: value.rua,
         zip: value.cep
       }
-    }
+    };
   }
 }
