@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +34,18 @@ export class UtilsService {
         },
         (error)=>{
           resolve({})
+        }
+      )
+    })
+  }
+  getAgreements():Promise<Array<any>>{
+    return new Promise((resolve)=>{
+      this.http.get(`${environment.api}api/agreement/all`).subscribe(
+        (response:Array<any>)=>{
+          resolve(response)
+        },
+        (error)=>{
+          resolve([])
         }
       )
     })

@@ -14,6 +14,7 @@ export class CadastroPage {
 
   cadastroForm: FormGroup;
   uf: Array<any>;
+  agreements: Array<any>;
   constructor(
     private navCtrl: NavController,
     public formBuilder: FormBuilder,
@@ -22,6 +23,7 @@ export class CadastroPage {
     private alertCtrl: AlertController
   ) {
     this.loadUf();
+    this.getAgreements()
     this.cadastroForm = this.formBuilder.group({
       password: new FormControl('', Validators.compose([
         Validators.required,
@@ -115,6 +117,7 @@ export class CadastroPage {
       birthDay: value.data,
       email: value.email,
       password: value.password,
+      agreement: value.convenio,
       address: {
         city: value.cidade,
         complement: value.complenento || '',
@@ -125,5 +128,10 @@ export class CadastroPage {
         zip: value.cep
       }
     };
+  }
+
+  async getAgreements(){
+    let agreements:Array<any> = await this.utils.getAgreements()
+    this.agreements = agreements
   }
 }

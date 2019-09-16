@@ -7,6 +7,7 @@ export interface User {
     password: string;
     name: string;
     birthDay: Date;
+    agreement: any;
     address: {
         state: string;
         city: string;
