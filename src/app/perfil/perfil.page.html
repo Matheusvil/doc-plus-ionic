@@ -9,100 +9,54 @@
 
 <ion-content>
   <div class="container">
-    <ion-button fill="clear" id="btn-editar" (click)="edit()">Editar</ion-button>
+    <ion-button fill="clear" id="btn-editar" (click)="show()">Editar</ion-button>
     <div class="row">
-      <div class="form" *ngIf="showComp">
+      <div class="form">
         <ion-item>
           <ion-label position="stakced">Nome Completo:</ion-label>
-          <ion-input type='text' disabled></ion-input>
+          <ion-input type='text' disabled="true"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stakced">Data Nacimento:</ion-label>
-          <ion-input type='number' disabled></ion-input>
+          <ion-input type='number' disabled="true"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stakced">E-mail:</ion-label>
-          <ion-input type='email' disabled></ion-input>
+          <ion-input type='email' disabled="true"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stakced">CEP:</ion-label>
-          <ion-input type='number' disabled></ion-input>
+          <ion-input type='number' disabled="true"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stakced">Rua:</ion-label>
-          <ion-input type='text' disabled></ion-input>
+          <ion-input type='text' disabled="true"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stakced">Bairro:</ion-label>
-          <ion-input type='text' disabled></ion-input>
+          <ion-input type='text' disabled="true"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="floating">Número</ion-label>
-          <ion-input type='number' disabled></ion-input>
+          <ion-label position="floating">Número:</ion-label>
+          <ion-input type='number' disabled="true"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stakced">Cidade:</ion-label>
-          <ion-input type='text'disabled></ion-input>
+          <ion-input type='text'disabled="true"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stakced">Estado:</ion-label>
-          <ion-select disabled>
+          <ion-select disabled="true">
             <ion-select-option *ngFor="let u of uf" >{{u.sigla}}</ion-select-option>
           </ion-select>
         </ion-item>
         <ion-item>
           <ion-label position="stakced">Convênio:</ion-label>
-          <ion-select disabled>
+          <ion-select disabled="true">
             <ion-select-option *ngFor="let u of agreements" value={{u._id}} >{{u.name}}</ion-select-option>
           </ion-select>
         </ion-item>
-      </div>
-      <div class="form" *ngIf="!showComp">
-        <ion-item>
-          <ion-label position="stakced">Nome Completo:</ion-label>
-          <ion-input type='text' ></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="stakced">Data Nacimento:</ion-label>
-          <ion-input type='number' ></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="stakced">E-mail:</ion-label>
-          <ion-input type='email' ></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="stakced">CEP:</ion-label>
-          <ion-input type='number' ></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="stakced">Rua:</ion-label>
-          <ion-input type='text' ></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="stakced">Bairro:</ion-label>
-          <ion-input type='text' ></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Número</ion-label>
-          <ion-input type='number' ></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="stakced">Cidade:</ion-label>
-          <ion-input type='text'></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="stakced">Estado:</ion-label>
-          <ion-select >
-            <ion-select-option *ngFor="let u of uf" >{{u.sigla}}</ion-select-option>
-          </ion-select>
-        </ion-item>
-        <ion-item>
-          <ion-label position="stakced">Convênio:</ion-label>
-          <ion-select >
-            <ion-select-option *ngFor="let u of agreements" value={{u._id}} >{{u.name}}</ion-select-option>
-          </ion-select>
-        </ion-item>
-        <ion-button fill="clear" id="btn-salvar">Salvar</ion-button>
+        <ion-button fill="clear" id="btn-salvar" *ngIf="showComp">Salvar</ion-button>
       </div>
     </div>
   </div>

@@ -8,8 +8,8 @@ import { UsersService, User } from '../services/users.service';
   styleUrls: ['./perfil.page.scss'],
 })
 export class PerfilPage implements OnInit {
-
-  showComp = true;
+  disabled = true;
+  showComp = false;
   uf: Array<any>;
   agreements: Array<any>;
   constructor(
@@ -23,6 +23,10 @@ export class PerfilPage implements OnInit {
   ngOnInit() {
   }
   
+  show(){
+    this.showComp = !this.showComp;
+  }
+
   async getAgreements(){
     let agreements:Array<any> = await this.utils.getAgreements()
     this.agreements = agreements
@@ -32,9 +36,4 @@ export class PerfilPage implements OnInit {
     const states: Array<any> = await this.utils.getStates();
     this.uf = states;
   }
-
-  edit(){
-    this.showComp = !this.showComp;
-  }
-
 }
