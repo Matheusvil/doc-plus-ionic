@@ -9,98 +9,100 @@
 
 <ion-content>
   <div class="container">
-    <ion-button fill="clear" id="btn-editar">Editar</ion-button>
+    <ion-button fill="clear" id="btn-editar" (click)="edit()">Editar</ion-button>
     <div class="row">
-      <div class="form">
+      <div class="form" *ngIf="showComp">
         <ion-item>
           <ion-label position="stakced">Nome Completo:</ion-label>
-          <ion-input type='text' disabled>Matheus Vilela</ion-input>
+          <ion-input type='text' disabled></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stakced">Data Nacimento:</ion-label>
-          <ion-input type='number' disabled>11/04/1999</ion-input>
+          <ion-input type='number' disabled></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stakced">E-mail:</ion-label>
-          <ion-input type='email' disabled>matheusvilela1104@gmail.com</ion-input>
+          <ion-input type='email' disabled></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stakced">CEP:</ion-label>
-          <ion-input type='number' disabled>12308-470</ion-input>
+          <ion-input type='number' disabled></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stakced">Rua:</ion-label>
-          <ion-input type='text' disabled>Rua Tiradentes</ion-input>
+          <ion-input type='text' disabled></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stakced">Bairro:</ion-label>
-          <ion-input type='text' disabled>Centro</ion-input>
+          <ion-input type='text' disabled></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Número</ion-label>
-          <ion-input type='number' disabled>402</ion-input>
+          <ion-input type='number' disabled></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stakced">Cidade:</ion-label>
-          <ion-input type='text'disabled>Jacareí</ion-input>
+          <ion-input type='text'disabled></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stakced">Estado:</ion-label>
           <ion-select disabled>
-            <ion-select-option value="AC">AC</ion-select-option>
-            <ion-select-option value="AL">AL</ion-select-option>
-            <ion-select-option value="AP">AP</ion-select-option>
-            <ion-select-option value="AM">AM</ion-select-option>
-            <ion-select-option value="BA">BA</ion-select-option>
-            <ion-select-option value="CE">CE</ion-select-option>
-            <ion-select-option value="DF">DF</ion-select-option>
-            <ion-select-option value="ES">ES</ion-select-option>
-            <ion-select-option value="GO">GO</ion-select-option>
-            <ion-select-option value="MA">MA</ion-select-option>
-            <ion-select-option value="MT">MT</ion-select-option>
-            <ion-select-option value="MS">MS</ion-select-option>
-            <ion-select-option value="MG">MG</ion-select-option>
-            <ion-select-option value="PA">PA</ion-select-option>
-            <ion-select-option value="PB">PB</ion-select-option>
-            <ion-select-option value="PR">PR</ion-select-option>
-            <ion-select-option value="PE">PE</ion-select-option>
-            <ion-select-option value="PI">PI</ion-select-option>
-            <ion-select-option value="RJ">RJ</ion-select-option>
-            <ion-select-option value="RN">RN</ion-select-option>
-            <ion-select-option value="RS">RS</ion-select-option>
-            <ion-select-option value="RO">RO</ion-select-option>
-            <ion-select-option value="RR">RR</ion-select-option>
-            <ion-select-option value="SC">SC</ion-select-option>
-            <ion-select-option value="SP" selected>SP</ion-select-option>
-            <ion-select-option value="SE">SE</ion-select-option>
-            <ion-select-option value="TO">TO</ion-select-option>
+            <ion-select-option *ngFor="let u of uf" >{{u.sigla}}</ion-select-option>
           </ion-select>
         </ion-item>
         <ion-item>
           <ion-label position="stakced">Convênio:</ion-label>
           <ion-select disabled>
-            <ion-select-option value="Allianz" selected>Allianz</ion-select-option>
-            <ion-select-option value="Amil">AMIL</ion-select-option>
-            <ion-select-option value="ativia">Ativia</ion-select-option>
-            <ion-select-option value="bradesco">Bradesco</ion-select-option>
-            <ion-select-option value="c.Aeronáutica">Comando da Aeronáutica</ion-select-option>
-            <ion-select-option value="economus">Economus</ion-select-option>
-            <ion-select-option value="eear">EEAR</ion-select-option>
-            <ion-select-option value="fusex">FUSEX</ion-select-option>
-            <ion-select-option value="Gama">Gama saúde</ion-select-option>
-            <ion-select-option value="g.sjc">Grupo São José Saúde</ion-select-option>
-            <ion-select-option value="l.Empresarial">Life Empresarial</ion-select-option>
-            <ion-select-option value="mediservice">Mediservice</ion-select-option>
-            <ion-select-option value="n.d.intermedica">Notre Dame Intermédica</ion-select-option>
-            <ion-select-option value="OMINT">OMINT</ion-select-option>
-            <ion-select-option value="policlin">Policlin Saúde</ion-select-option>
-            <ion-select-option value="pss">Porto Seguro Saúde</ion-select-option>
-            <ion-select-option value="Sabesprev">Sabesprev</ion-select-option>
-            <ion-select-option value="SulAmerica">SulAmérica Aetna</ion-select-option>
-            <ion-select-option value="Sompo">Sompo Seguros</ion-select-option>
+            <ion-select-option *ngFor="let u of agreements" value={{u._id}} >{{u.name}}</ion-select-option>
           </ion-select>
         </ion-item>
-        <ion-button fill="clear" style="display: none;" id="btn-salvar">Salvar</ion-button>
+      </div>
+      <div class="form" *ngIf="!showComp">
+        <ion-item>
+          <ion-label position="stakced">Nome Completo:</ion-label>
+          <ion-input type='text' ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stakced">Data Nacimento:</ion-label>
+          <ion-input type='number' ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stakced">E-mail:</ion-label>
+          <ion-input type='email' ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stakced">CEP:</ion-label>
+          <ion-input type='number' ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stakced">Rua:</ion-label>
+          <ion-input type='text' ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stakced">Bairro:</ion-label>
+          <ion-input type='text' ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Número</ion-label>
+          <ion-input type='number' ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stakced">Cidade:</ion-label>
+          <ion-input type='text'></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stakced">Estado:</ion-label>
+          <ion-select >
+            <ion-select-option *ngFor="let u of uf" >{{u.sigla}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stakced">Convênio:</ion-label>
+          <ion-select >
+            <ion-select-option *ngFor="let u of agreements" value={{u._id}} >{{u.name}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-button fill="clear" id="btn-salvar">Salvar</ion-button>
       </div>
     </div>
   </div>

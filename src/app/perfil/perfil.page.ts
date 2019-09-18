@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UtilsService } from '../services/utils.service';
+import { UsersService, User } from '../services/users.service';
 
 @Component({
   selector: 'app-perfil',
@@ -7,9 +9,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilPage implements OnInit {
 
-  constructor() { }
+  showComp = true;
+  uf: Array<any>;
+  agreements: Array<any>;
+  constructor(
+    private utils: UtilsService,
+    private userService: UsersService
+    ){ 
+      this.loadUf();
+      this.getAgreements()
+    }
 
   ngOnInit() {
+  }
+  
+  async getAgreements(){
+    let agreements:Array<any> = await this.utils.getAgreements()
+    this.agreements = agreements
+  }
+  
+  async loadUf() {
+    const states: Array<any> = await this.utils.getStates();
+    this.uf = states;
+  }
+
+  edit(){
+    this.showComp = !this.showComp;
   }
 
 }
