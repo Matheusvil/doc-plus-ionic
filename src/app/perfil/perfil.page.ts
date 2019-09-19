@@ -8,7 +8,7 @@ import { UsersService, User } from '../services/users.service';
   styleUrls: ['./perfil.page.scss'],
 })
 export class PerfilPage implements OnInit {
-  disabled = true;
+  isAvaliable = true;
   showComp = false;
   uf: Array<any>;
   agreements: Array<any>;
@@ -25,6 +25,7 @@ export class PerfilPage implements OnInit {
   
   show(){
     this.showComp = !this.showComp;
+    this.isAvaliable = !this.isAvaliable;
   }
 
   async getAgreements(){
