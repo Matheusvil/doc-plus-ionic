@@ -13,46 +13,46 @@
     <div class="row">
       <div class="form">
         <ion-item>
-          <ion-label position="stakced">Nome Completo:</ion-label>
-          <ion-input type='text' [readonly]="isAvaliable"></ion-input>
+          <ion-label position="floating">Nome Completo:</ion-label>
+          <ion-input type='text' disabled="{{isAvaliable}}"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="stakced">Data Nacimento:</ion-label>
-          <ion-input type='number' [readonly]="isAvaliable"></ion-input>
+          <ion-label position="floating">Data Nacimento:</ion-label>
+          <ion-input type='number' disabled="{{isAvaliable}}"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="stakced">E-mail:</ion-label>
-          <ion-input type='email' [readonly]="isAvaliable"></ion-input>
+          <ion-label position="floating">E-mail:</ion-label>
+          <ion-input type='email' disabled="{{isAvaliable}}"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="stakced">CEP:</ion-label>
-          <ion-input type='number' [readonly]="isAvaliable"></ion-input>
+          <ion-label position="floating">CEP:</ion-label>
+          <ion-input type='number' disabled="{{isAvaliable}}"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="stakced">Rua:</ion-label>
-          <ion-input type='text' [readonly]="isAvaliable"></ion-input>
+          <ion-label position="floating">Rua:</ion-label>
+          <ion-input type='text' disabled="{{isAvaliable}}"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="stakced">Bairro:</ion-label>
-          <ion-input type='text' [readonly]="isAvaliable"></ion-input>
+          <ion-label position="floating">Bairro:</ion-label>
+          <ion-input type='text' disabled="{{isAvaliable}}"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Número:</ion-label>
-          <ion-input type='number' [readonly]="isAvaliable"></ion-input>
+          <ion-input type='number' disabled="{{isAvaliable}}"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="stakced">Cidade:</ion-label>
-          <ion-input type='text' [readonly]="isAvaliable"></ion-input>
+          <ion-label position="floating">Cidade:</ion-label>
+          <ion-input type='text' disabled="{{isAvaliable}}"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="stakced">Estado:</ion-label>
-          <ion-select>
+          <ion-label position="floating">Estado:</ion-label>
+          <ion-select disabled="{{isAvaliable}}">
             <ion-select-option *ngFor="let u of uf" >{{u.sigla}}</ion-select-option>
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-label position="stakced">Convênio:</ion-label>
-          <ion-select>
+          <ion-label position="floating">Convênio:</ion-label>
+          <ion-select disabled="{{isAvaliable}}">
             <ion-select-option *ngFor="let u of agreements" value={{u._id}} >{{u.name}}</ion-select-option>
           </ion-select>
         </ion-item>
