@@ -23,7 +23,7 @@ export class CadastroPage {
     private alertCtrl: AlertController
   ) {
     this.loadUf();
-    this.getAgreements()
+    this.getAgreements();
     this.cadastroForm = this.formBuilder.group({
       password: new FormControl('', Validators.compose([
         Validators.required,

@@ -11,53 +11,53 @@
   <div class="container">
     <ion-button fill="clear" id="btn-editar" (click)="show()">Editar</ion-button>
     <div class="row">
-      <div class="form">
+      <form [formGroup]="updateForm">
         <ion-item>
           <ion-label position="floating">Nome Completo:</ion-label>
-          <ion-input type='text' disabled="{{isAvaliable}}"></ion-input>
+          <ion-input formControlName="nome" type='text' disabled="{{isAvaliable}}"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Data Nacimento:</ion-label>
-          <ion-input type='number' disabled="{{isAvaliable}}"></ion-input>
+          <ion-input formControlName="data" type='number' disabled="{{isAvaliable}}"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">E-mail:</ion-label>
-          <ion-input type='email' disabled="{{isAvaliable}}"></ion-input>
+          <ion-input formControlName="email" type='email' disabled="{{isAvaliable}}"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">CEP:</ion-label>
-          <ion-input type='number' disabled="{{isAvaliable}}"></ion-input>
+          <ion-input formControlName="cep" type='number' disabled="{{isAvaliable}}"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Rua:</ion-label>
-          <ion-input type='text' disabled="{{isAvaliable}}"></ion-input>
+          <ion-input formControlName="rua" type='text' disabled="{{isAvaliable}}"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Bairro:</ion-label>
-          <ion-input type='text' disabled="{{isAvaliable}}"></ion-input>
+          <ion-input formControlName="bairro" type='text' disabled="{{isAvaliable}}"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Número:</ion-label>
-          <ion-input type='number' disabled="{{isAvaliable}}"></ion-input>
+          <ion-input formControlName="numero" type='number' disabled="{{isAvaliable}}"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Cidade:</ion-label>
-          <ion-input type='text' disabled="{{isAvaliable}}"></ion-input>
+          <ion-input formControlName="cidade" type='text' disabled="{{isAvaliable}}"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Estado:</ion-label>
-          <ion-select disabled="{{isAvaliable}}">
+          <ion-select formControlName="estado" disabled="{{isAvaliable}}">
             <ion-select-option *ngFor="let u of uf" >{{u.sigla}}</ion-select-option>
           </ion-select>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Convênio:</ion-label>
-          <ion-select disabled="{{isAvaliable}}">
+          <ion-select  formControlName="convenio" disabled="{{isAvaliable}}">
             <ion-select-option *ngFor="let u of agreements" value={{u._id}} >{{u.name}}</ion-select-option>
           </ion-select>
         </ion-item>
         <ion-button fill="clear" id="btn-salvar" *ngIf="showComp">Salvar</ion-button>
-      </div>
+      </form>
     </div>
   </div>
 </ion-content>
