@@ -22,7 +22,7 @@ export class PerfilPage implements OnInit {
     private utils: UtilsService,
     private userService: UsersService,
     private alertCtrl: AlertController
-    ){ 
+    ){
       this.loadUser();
       this.loadUf();
       this.getAgreements();
@@ -136,6 +136,19 @@ export class PerfilPage implements OnInit {
   }
   async loadUser(){
     const user = await this.userService.getUser();
-    this.user = user
+    this.user = user;
+    this.dadosUser(user);
+  }
+  dadosUser(dados) {
+    this.updateForm.controls.nome.setValue(dados.name);
+    this.updateForm.controls.data.setValue(dados.birthDay);
+    this.updateForm.controls.email.setValue(dados.email);
+    this.updateForm.controls.cep.setValue(dados.zip);
+    this.updateForm.controls.rua.setValue(dados.street);
+    this.updateForm.controls.numero.setValue(dados.number);
+    this.updateForm.controls.bairro.setValue(dados.neighborhood);
+    this.updateForm.controls.cidade.setValue(dados.city);
+    this.updateForm.controls.estado.setValue(dados.state);
+    this.updateForm.controls.convenio.setValue(dados.agreement);
   }
 }
