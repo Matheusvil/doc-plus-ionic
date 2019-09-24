@@ -42,6 +42,25 @@ export class UsersService {
     });
   }
 
+  updateUser(value: User) {
+    return new Promise(async (resolve, reject) => {
+      const token = await this.getToken()
+      this.http.put(environment.api + 'api/me', value, {
+        headers:{
+          'authorization' : `Bearer ${token}`
+        }
+      }).subscribe(
+          (response: any) => {
+            this.saveUser(response.decode, response.token);
+            resolve(response);
+          } ,
+          (error: any) => {
+              reject(error);
+          }
+      );
+    });
+  }
+
   saveUser(user: any, token: string) {
     this.storage.set('user', user);
     this.storage.set('token', token);

@@ -10,6 +10,7 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./perfil.page.scss'],
 })
 export class PerfilPage implements OnInit {
+  user:any;
   isAvaliable = true;
   showComp = false;
   updateForm: FormGroup;
@@ -22,6 +23,7 @@ export class PerfilPage implements OnInit {
     private userService: UsersService,
     private alertCtrl: AlertController
     ){ 
+      this.loadUser();
       this.loadUf();
       this.getAgreements();
       this.updateForm = this.formBuilder.group({
@@ -104,7 +106,7 @@ export class PerfilPage implements OnInit {
   async updateUser() {
     try {
       const value: User = this.parseUser(this.updateForm.value);
-      const user: any = await this.userService.createUser(value);
+      const user: any = await this.userService.updateUser(value);
     } catch (err) {
         const alt = await this.alertCtrl.create({
             header: 'Error',
@@ -131,5 +133,9 @@ export class PerfilPage implements OnInit {
         zip: value.cep
       }
     };
+  }
+  async loadUser(){
+    const user = await this.userService.getUser();
+    this.user = user
   }
 }

@@ -18,7 +18,7 @@
         </ion-item>
         <ion-item>
           <ion-label position="floating">Data Nacimento:</ion-label>
-          <ion-input formControlName="data" type='number' disabled="{{isAvaliable}}"></ion-input>
+          <ion-input formControlName="data" type='date' disabled="{{isAvaliable}}"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">E-mail:</ion-label>
@@ -26,7 +26,7 @@
         </ion-item>
         <ion-item>
           <ion-label position="floating">CEP:</ion-label>
-          <ion-input formControlName="cep" type='number' disabled="{{isAvaliable}}"></ion-input>
+          <ion-input formControlName="cep" type='text' disabled="{{isAvaliable}}" (ionBlur)="cepKeyUp($event)"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Rua:</ion-label>
@@ -56,7 +56,7 @@
             <ion-select-option *ngFor="let u of agreements" value={{u._id}} >{{u.name}}</ion-select-option>
           </ion-select>
         </ion-item>
-        <ion-button fill="clear" id="btn-salvar" *ngIf="showComp">Salvar</ion-button>
+        <ion-button fill="clear" id="btn-salvar" *ngIf="showComp" (click)="updateUser()">Salvar</ion-button>
       </form>
     </div>
   </div>
