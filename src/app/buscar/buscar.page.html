@@ -7,33 +7,24 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-searchbar showCancelButton="always"></ion-searchbar>
-  <h2>Buscar Recentes</h2>
+  <ion-searchbar 
+    showCancelButton="always" 
+    animated
+    autocomplete="on"
+    autocorrect="on"
+    [spellcheck]="true"
+    (search)="search()"
+    [(ngModel)]="query"
+  ></ion-searchbar>
+  
+  <h2>Buscas Recentes</h2>
   <p>Cardiologista</p>
+  
   <h2>Categorias</h2>
   <a href="#">Todas as categorias</a>
   <ion-row>
-    <ion-col><ion-button>
-      Cardiologista
-    </ion-button></ion-col>
-    <ion-col><ion-button>
-      Pediatra
-    </ion-button></ion-col>
+    <ion-col *ngFor="let s of services" size="6">
+        <ion-button (click)="searchByService(s.service)">{{s.service}}</ion-button>
+    </ion-col>
   </ion-row>
-  <ion-row>
-      <ion-col><ion-button>
-        Psicólogo
-      </ion-button></ion-col>
-      <ion-col><ion-button>
-        Oftalmologista
-      </ion-button></ion-col>
-    </ion-row>
-    <ion-row>
-        <ion-col><ion-button>
-          Ortopedista
-        </ion-button></ion-col>
-        <ion-col><ion-button>
-          Ortodontista
-        </ion-button></ion-col>
-      </ion-row>
 </ion-content>

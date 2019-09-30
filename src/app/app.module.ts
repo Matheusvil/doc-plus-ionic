@@ -30,7 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    AuthenticationService
+    AuthenticationService,
   ],
   bootstrap: [AppComponent]
 })
