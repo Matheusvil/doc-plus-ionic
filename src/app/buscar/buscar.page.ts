@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController, ModalController } from '@ionic/angular';
+import { MenuController, ModalController, NavController } from '@ionic/angular';
 import { UtilsService } from '../services/utils.service';
 import { SearchService } from '../api/search.service';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
@@ -19,7 +19,8 @@ export class BuscarPage implements OnInit {
     private utils: UtilsService,
     private searchApi: SearchService,
     private geolocaion: Geolocation,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private navCtrl: NavController
   ) {
     this.loadServices();
     this.loadPosition();
@@ -47,6 +48,11 @@ export class BuscarPage implements OnInit {
         component: ClinicListPage,
         componentProps: {
           clinics: response.clinics
+        }
+      });
+      modal.onDidDismiss().then((val) => {
+        if (val.data) {
+          this.navCtrl.navigateForward(`perfil-clinica/:${val.data._id}`);
         }
       });
       await modal.present();
