@@ -76,10 +76,10 @@ export class PerfilPage implements OnInit {
   }
 
   async getAgreements(){
-    let agreements:Array<any> = await this.utils.getAgreements()
-    this.agreements = agreements
+    const agreements: Array<any> = await this.utils.getAgreements()
+    this.agreements = agreements;
   }
-  
+
   async loadUf() {
     const states: Array<any> = await this.utils.getStates();
     this.uf = states;
@@ -103,6 +103,7 @@ export class PerfilPage implements OnInit {
     this.updateForm.controls.cidade.setValue(dados.localidade);
     this.updateForm.controls.estado.setValue(dados.uf);
   }
+
   async updateUser() {
     try {
       const value: User = this.parseUser(this.updateForm.value);
@@ -116,6 +117,7 @@ export class PerfilPage implements OnInit {
         await alt.present();
     }
   }
+
   parseUser(value: any): User {
     return{
       name: value.nome,
@@ -134,15 +136,17 @@ export class PerfilPage implements OnInit {
       }
     };
   }
-  async loadUser(){
+
+  async loadUser() {
     const user = await this.userService.getUser();
     this.user = user;
     this.dadosUser(user.data);
   }
   dadosUser(dados) {
-    console.log(dados);
+    const date = new Date(dados.birthDay);
+    console.log(date);
     this.updateForm.controls.nome.setValue(dados.name);
-    this.updateForm.controls.data.setValue(dados.birthDay);
+    this.updateForm.controls.data.setValue(this.formatDate(date));
     this.updateForm.controls.email.setValue(dados.email);
     this.updateForm.controls.cep.setValue(dados.address.zip);
     this.updateForm.controls.rua.setValue(dados.address.street);
@@ -151,5 +155,18 @@ export class PerfilPage implements OnInit {
     this.updateForm.controls.cidade.setValue(dados.address.city);
     this.updateForm.controls.estado.setValue(dados.address.state);
     this.updateForm.controls.convenio.setValue(dados.agreement);
+  }
+
+  formatDate(date: Date): string {
+    const year = date.getFullYear();
+    let month = `${date.getMonth() + 1}`;
+    if (month.length === 1) {
+      month = `0${month}`;
+    }
+    let day = `${date.getDate()}`;
+    if (day.length === 1) {
+      day = `0${day}`;
+    }
+    return `${year}-${month}-${day}`;
   }
 }
